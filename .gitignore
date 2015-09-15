@@ -1,0 +1,7 @@
+node_modules
+*.sass-cache*
+style.css.map
+db_config.json
+.db_backups
+style.css
+.DS_store
