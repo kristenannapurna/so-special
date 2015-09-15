@@ -6,6 +6,22 @@ var gulp = require('gulp'),
 	imagemin = require('gulp-imagemin');
 	notify = require('gulp-notify');
 	minifyCss = require('gulp-minify-css');
+	browserSync = require('browser-sync');
+
+
+gulp.task('browser-sync', function(){
+	//watch files
+	var files = [
+		'./style.css',
+		'./*.php'
+	];
+	//initialize browsersync
+	browserSync.init(files, {
+		proxy: 'http://localhost:8888/mcclellandinsurance/',
+		notify: false
+		});
+
+	});
 
 
 gulp.task('styles', function(){
@@ -50,4 +66,4 @@ gulp.task('watch', function(){
 	gulp.watch('img/originals/*.{gif,jpg,png}',['images'])
 	});
 
-gulp.task('default', ['styles', 'jshint', 'images', 'watch']);	
+gulp.task('default', ['styles', 'jshint', 'images', 'browser-sync', 'watch']);	
