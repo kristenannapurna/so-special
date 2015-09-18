@@ -44,7 +44,10 @@ function mcclellandinsurance_setup() {
 
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
-		'primary' => esc_html__( 'Primary Menu', 'mcclellandinsurance' ),
+		'services' => esc_html__( 'Services Menu', 'mcclellandinsurance' ),
+		'personal' => esc_html__( 'Personal Menu', 'mcclellandinsurance'),
+		'commercial' => esc_html__( 'Commercial Menu', 'mcclellandinsurance'),
+		'info' => esc_html__( 'Info Menu', 'mcclellandinsurance')
 	) );
 
 	/*
