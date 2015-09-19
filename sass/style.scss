@@ -111,3 +111,10 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 --------------------------------------------------------------*/
 @import 'layout/_grid-generator.scss';
 @include gridGenerator();
+
+/*--------------------------------------------------------------
+# Template Styles
+--------------------------------------------------------------*/
+@import 'templates/templates';
+
+
