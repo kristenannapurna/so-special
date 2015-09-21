@@ -43,6 +43,7 @@
 				]); ?>
 			</div>
 			<div class="grid-3 footerInfo">
+				<div class="icon-contact"></div>
 				<p class="grid-6 offset-6">Join our Newsletter</p>
 				<hr class="grid-2 offset-10"/>
 				<p class="grid-6 offset-6">Brampton Office</p>
@@ -50,6 +51,12 @@
 				<p class="grid-6 offset-6">Etobicoke Office</p>
 				<p class="grid-6 offset-6"><a href="tel:+14162370436">(416) 237-0436</a></p>
 				<hr class="grid-2 offset-10"/>
+				<div class="icon-social-container">
+					<a href="http://twitter.com/mcclellandins" target="_blank"><div class="icon-social icon-social-twitter"></div></a>
+					<a href="http://facebook.com/mcclellandinsurance" target="_blank"><div class="icon-social icon-social-facebook"></div></a>
+					<a href="http://plus.google.com/115046320952444036268" target="_blank"><div class="icon-social icon-social-google"></div></a>
+					<a href="http://linkedin.com/company/mcclelland-insurance" target="_blank"><div class="icon-social icon-social-linkedin"></div></a>
+				</div>
 			</div>
 		</div><!-- .site-info -->
 		<div class="textCenter">
