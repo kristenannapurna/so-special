@@ -28,3 +28,24 @@
 @mixin clearfix-after() {
 	clear: both;
 }
+
+//for appending image to menu items
+@mixin menuImg($bgURL) {
+	content: '';
+	background: url($bgURL) no-repeat;
+	background-size: contain;
+	width: 43px;
+	height: 47px;
+	display: inline-block;
+	margin-right: 5px;
+	position: relative;
+	top: 12px;
+}
+
+.clearfix:after {
+   content: " ";
+   visibility: hidden;
+   display: block;
+   height: 0;
+   clear: both;
+}

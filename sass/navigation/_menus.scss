@@ -1,6 +1,6 @@
 .main-navigation, .secondary-nav {
-	clear: both;
-	display: block;
+	// clear: both;
+	// display: block;
 	float: left;
 	width: 100%;
 	ul {
@@ -66,12 +66,6 @@
 	}
 }
 
-// main nav
-
-.main-nav{
-	background-image: url(img/topbanner-BG.png);
-}
-
 /* Small menu. */
 .menu-toggle,
 .main-navigation.toggled ul {
@@ -107,3 +101,5 @@
 		width: 50%;
 	}
 }
+
+
