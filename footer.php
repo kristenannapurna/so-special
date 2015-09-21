@@ -16,13 +16,13 @@
 	<footer id="colophon" class="site-footer" role="contentinfo">
 		<div class="site-info grid-12 pad-2">
 			<div class="grid-3 footerLinks">
-				<h5>Services</h5>
+				<h4>Services</h4>
 				<?php wp_nav_menu([
 					"menu"=>"services"
 				]); ?>
 			</div>
 			<div class="grid-3 footerLinks">
-				<h5>Insurance</h5>
+				<h4>Insurance</h4>
 				<div class="innerFooterLinks">
 					<?php wp_nav_menu([
 						"menu"=>"personal",
@@ -37,21 +37,31 @@
 				</div>
 			</div>
 			<div class="grid-3 footerLinks">
-				<h5>Info</h5>
+				<h4>Info</h4>
 				<?php wp_nav_menu([
 					"menu"=>"info"
 				]); ?>
 			</div>
 			<div class="grid-3 footerInfo">
+				<div class="icon-contact"></div>
 				<p class="grid-6 offset-6">Join our Newsletter</p>
-				<hr class="grid-3 offset-8"/>
+				<hr class="grid-2 offset-10"/>
 				<p class="grid-6 offset-6">Brampton Office</p>
 				<p class="grid-6 offset-6"><a href="tel:+19054510755">(905) 451-0755</a></p>
 				<p class="grid-6 offset-6">Etobicoke Office</p>
 				<p class="grid-6 offset-6"><a href="tel:+14162370436">(416) 237-0436</a></p>
-				<hr class="grid-3 offset-8"/>
+				<hr class="grid-2 offset-10"/>
+				<div class="icon-social-container">
+					<a href="http://twitter.com/mcclellandins" target="_blank"><div class="icon-social icon-social-twitter"></div></a>
+					<a href="http://facebook.com/mcclellandinsurance" target="_blank"><div class="icon-social icon-social-facebook"></div></a>
+					<a href="http://plus.google.com/115046320952444036268" target="_blank"><div class="icon-social icon-social-google"></div></a>
+					<a href="http://linkedin.com/company/mcclelland-insurance" target="_blank"><div class="icon-social icon-social-linkedin"></div></a>
+				</div>
 			</div>
 		</div><!-- .site-info -->
+		<div class="textCenter">
+			McClelland Insurance Brokers Limited is an independent insurance brokerage operating in Ontario since 1971. As an independent insurance brokerage we represent you, our customer, not the insurance company. © 2014
+		</div>
 	</footer><!-- #colophon -->
 </div><!-- #page -->
 

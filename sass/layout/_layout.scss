@@ -1,0 +1,10 @@
+
+/*--------------------------------------------------------------
+# Grid System
+--------------------------------------------------------------*/
+@import 'grid-generator';
+@include gridGenerator();
+
+.textCenter {
+	text-align:center;
+}

@@ -107,10 +107,9 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 @import "media/media";
 
 /*--------------------------------------------------------------
-# Grid System
+# Layout
 --------------------------------------------------------------*/
-@import 'layout/_grid-generator.scss';
-@include gridGenerator();
+@import 'layout/layout';
 
 /*--------------------------------------------------------------
 # Template Styles

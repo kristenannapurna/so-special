@@ -1,20 +1,24 @@
 .footerLinks {
 	ul {
 		list-style:none;
-		li {
-
-		}
+		margin:0;
 
 		.sub-menu li {
-			@include font-size(0.85);
+			@include font-size(14);
 		}
 	}
 	a {
 		text-decoration:none;
+		color:$grey;
+
+		&:hover {
+			box-shadow: 1px 1px 10px 6px rgba(207, 207, 207, 0.2);
+    		background: rgba(207, 207, 207, 0.2);
+		}
 	}
 
-	h5 {
-		@include font-size(1.2);
+	h4 {
+		margin:0;
 	}
 }
 
@@ -22,8 +26,56 @@
 	p, hr {
 		margin-top:0.2rem;
 		margin-bottom:0.2rem;
+		color:$grey;
+		a {
+			color:$grey;
+			text-decoration:none;
+		}
 	}
 	p {
-		float:right;
+		text-align:right;
+	}
+	hr {
+		background-color:$grey;
+	}
+}
+
+.site-footer {
+	background-image:url(img/footer-BG-lighter.png);
+	color:$grey;
+	padding-bottom:5rem;
+}
+
+.icon-contact {
+    opacity: 0.86;
+    float: right;
+    width: 58px;
+    height: 50px;
+    background: url(img/icon-contact.png) no-repeat;
+}
+
+.icon-social-container {
+	float:right;
+	padding-top:15px;
+	.icon-social {
+		opacity: 0.86;
+	    float: left;
+	    width: 30px;
+	    height: 30px;
+	    margin-right: 14px;
+
+	    &.icon-social-twitter {
+	    	background: url(img/twitter.png) no-repeat;
+	    }
+	    &.icon-social-facebook {
+	    	background: url(img/facebook.png) no-repeat;
+	    }
+	    &.icon-social-google {
+	    	background: url(img/google.png) no-repeat;
+	    }
+	    &.icon-social-linkedin {
+	    	background: url(img/linkedin.png) no-repeat;
+	    	margin-right:0;
+	    }
 	}
 }
