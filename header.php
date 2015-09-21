@@ -29,7 +29,7 @@
 		<div class="main-nav grid-12">
 			<div class="wrapper clearfix">
 				<div class="site-branding">
-					<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><img src=" <?php bloginfo(template_directory) ?>/img/mcclellandlogo.png " alt="McClelland Insurance Logo"></a></h1>
+					<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><img src=" <?php bloginfo('template_directory') ?>/img/mcclellandlogo.png " alt="McClelland Insurance Logo"></a></h1>
 				</div><!-- .site-branding -->
 				<nav id="site-navigation" class="main-navigation" role="navigation">
 					<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Services Menu', 'mcclellandinsurance' ); ?></button>
