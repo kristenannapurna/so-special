@@ -17,7 +17,7 @@
 <link rel="profile" href="http://gmpg.org/xfn/11">
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 <link href='https://fonts.googleapis.com/css?family=Dosis:400,500' rel='stylesheet' type='text/css'>
-
+<title></title>
 <?php wp_head(); ?>
 </head>
 
@@ -47,12 +47,15 @@
 		</div><!-- /main-navigation -->
 		<div class="secondary-nav">
 			<nav id="secondary-nav" class="secondary-navigation" role="navigation">
-				<ul class="menu">
-					<li class="personal"><a href="http://mcclellandinsurance.com/personal">Personal</a></li>
-					<li class="commercial"><a href="http://mcclellandinsurance.com/commercial">Commercial</a></li>
-				</ul>
-				<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Info Menu', 'mcclellandinsurance' ); ?></button>
-				<?php wp_nav_menu( array( 'theme_location' => 'info', 'menu_id' => 'info' ) ); ?>
+				<div class="wrapper clearfix">
+					<ul class="menu clearfix">
+						<li class="personal"><a href="http://mcclellandinsurance.com/personal">Personal</a></li>
+						<li class="commercial"><a href="http://mcclellandinsurance.com/commercial">Commercial</a></li>
+					</ul>
+					<div class="info-menu">
+						<?php wp_nav_menu( array( 'theme_location' => 'info', 'menu_id' => 'info' ) ); ?>
+					</div>
+				</div>
 			</nav>
 		</div> <!-- /secondary-nav -->
 	</header><!-- #masthead -->
