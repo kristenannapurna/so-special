@@ -5,8 +5,13 @@ get_header(); ?>
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
 			<div class="main-gallery">
-				<div class="gallery-cell"><img src="<?php bloginfo(template_directory) ?>/img/mcclellandinsurance_hero.png " alt=""></div>
-				<div class="gallery-cell"><img src=" <?php bloginfo(template_directory) ?>/img/filler-img.jpg" alt=""></div>
+				<?php while( has_sub_field('gallery_image') ): ?>
+					<div class="gallery-cell"><img src="<?php the_sub_field('image') ?>" alt=""></div>
+				<?php endwhile ?>
+
+
+
+				
 			</div>
 			
 
@@ -14,3 +19,5 @@ get_header(); ?>
 	</div><!-- #primary -->
 
 <?php get_footer(); ?>
+
+
