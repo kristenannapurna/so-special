@@ -21,18 +21,26 @@ input{
 
 .content-area {
 	background: url(img/topbanner-BG.png);
-	padding-top: 30px;
+	padding: 60px 0 40px 0;
 }
 
 .content-box{
 	background: white;
 	max-width: 940px;
-	margin: 40px auto;
-
+	margin: 0 auto;
+	margin-bottom: 0;
+	padding-bottom: 40px;
+	h3{
+		text-transform: uppercase;
+		@include font-size(18);
+	}
+	a{
+		color: lighten($grey, 30%);
+	}
 	a:hover{
 		border-bottom: 2px solid rgba(255, 191, 56, 0.76);
 	}
-	nav{
+	.page-heading{
 		text-transform: uppercase;
 		padding: 10px 30px;
 		box-shadow: 1px 4px 5px rgb(210, 210, 210);
@@ -45,11 +53,8 @@ input{
 				border: none;
 			}
 			clear:none;
-			&.entry-sub-title {
-				margin-left:20px;
-			}
 			span {
-				margin-right:20px;
+				margin:0 20px;
 			}
 		}
 		p{
@@ -62,14 +67,17 @@ input{
 			}
 		}
 	}
-
 	.entry-content {
 		padding:0 60px;
 	}
 
 	.entry-submenu {
-		float:left;
+		float:right;
 	}
+}
+
+.archive-list:nth-child(2n+1){
+	background: #FAF4F4;
 }
 
 .entry-submenu-holder {
@@ -77,4 +85,12 @@ input{
 	.entry-submenu {
 		display:none;
 	}
+}
+
+.next-posts-links{
+	float: right;
+	padding-bottom: 20px;		
+	.nav-previous, .nav-next{
+	margin-right: 20px;
+	} 
 }

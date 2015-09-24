@@ -10,15 +10,14 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<nav class="clearfix">
+	<nav class="clearfix page-heading">
 		<h2 class="entry-title">
-			<?php echo empty( $post->post_parent ) ? get_the_title( $post->ID ) : get_the_title( $post->post_parent );?>
+			<?if(empty($post->post_parent)):?>
+				<?=get_the_title($post->ID)?>
+			<?else:?>
+				<?=get_the_title($post->post_parent)?><span>></span><?=get_the_title($post->ID)?>
+			<?endif?>
 		</h2>
-		<?if(!empty($post->post_parent)):?>
-			<h2 class="entry-sub-title">
-				<span>></span><?php echo get_the_title($post->ID)?>
-			</h2>
-		<?endif?>
 		<?php $submenu = wp_nav_menu( [
 			"menu"=> empty( $post->post_parent ) ? strtolower(get_the_title( $post->ID )) : strtolower(get_the_title( $post->post_parent ) ), 
     		"submenu" => empty( $post->post_parent ) ? get_the_title( $post->ID ) : get_the_title( $post->post_parent ) ,
