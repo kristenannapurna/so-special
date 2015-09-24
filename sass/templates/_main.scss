@@ -69,10 +69,10 @@ input{
 	}
 	.entry-content {
 		padding:0 60px;
-	}
 
-	.entry-submenu {
-		float:right;
+		ul {
+			margin:20px;
+		}
 	}
 }
 
@@ -82,8 +82,40 @@ input{
 
 .entry-submenu-holder {
 	float:right;
+	position:relative;
+
+	.entry-submenu-button {
+		@include font-size(28);
+		color: $color__text-main;
+	}
+
 	.entry-submenu {
+		position: absolute;
+		box-shadow: 1px 1px 10px 1px rgb(210, 210, 210);
+		right:0;
+		background:white;
+		padding:10px 20px;
 		display:none;
+		width:280px;
+		ul {
+			list-style-type:none;
+			margin:0;
+			padding:0;
+
+			li {
+
+				padding:5px;
+
+				a {
+					color: lighten($grey, 30%);
+					@include font-size(16);
+				}
+
+				&.current_page_item a {
+					border-bottom: 2px solid rgba(255, 191, 56, 0.76);
+				}
+			}
+		}
 	}
 }
 

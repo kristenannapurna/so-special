@@ -10,4 +10,9 @@ $(function() {
 		autoPlay: true,
 		wrapAround: true
 	});
+
+	$(".entry-submenu-button").click(function(e) {
+		e.preventDefault();
+		$(".entry-submenu").toggle();
+	})
 });
