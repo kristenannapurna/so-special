@@ -45,9 +45,34 @@ input{
 		padding: 10px 30px;
 		box-shadow: 1px 4px 5px rgb(210, 210, 210);
 		h2{
+			float: left;
 			font-weight: 200;
 			@include font-size(28);
+			margin: 0;
+			a:hover{
+				border: none;
+			}
+			clear:none;
+			span {
+				margin:0 20px;
+			}
 		}
+		p{
+			float: right;
+			margin: 0;
+			position: relative;
+			top: 10px;
+			a{
+				color: lighten($grey, 30%);
+			}
+		}
+	}
+	.entry-content {
+		padding:0 60px;
+	}
+
+	.entry-submenu {
+		float:right;
 	}
 }
 
@@ -55,6 +80,12 @@ input{
 	background: #FAF4F4;
 }
 
+.entry-submenu-holder {
+	float:right;
+	.entry-submenu {
+		display:none;
+	}
+}
 
 .next-posts-links{
 	float: right;
