@@ -26,7 +26,7 @@
 		]); ?>
 		<?if($submenu):?>
 			<div class="entry-submenu-holder">
-				<a href="#" class="entry-submenu-button"></a>
+				<a href="#" class="entry-submenu-button">&#9776;</a>
 				<div class="entry-submenu">
 					<?=$submenu?>
 				</div>
