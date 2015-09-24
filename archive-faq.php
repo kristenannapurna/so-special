@@ -15,7 +15,7 @@ get_header(); ?>
 		<?php if ( have_posts() ) : ?>
 
 			<div class="content-box faq">
-				<nav class="clearfix">
+				<nav class="clearfix page-heading">
 					<h2><a href="http://mcclellandinsurance.com/faq">FAQ</a></h2>
 					<p><a href="#">Add A Question</a></p>
 				</nav>
@@ -35,7 +35,7 @@ get_header(); ?>
 								{
 									$args = array(
 											'orderby' => 'name',
-											'show_count' => 0,
+											'show_count' => 1,
 											'pad_counts' => 0,
 											'heirarchical' => 1,
 											'taxonomy' => $tax,
@@ -47,15 +47,17 @@ get_header(); ?>
 						 ?>
 					</div>
 					<div class="faqs">
+						<div class="next-posts-links">
+							<span class="nav-previous"><?php next_posts_link('<i class="fa fa-arrow-left"></i> Older FAQs') ?></span>
+							<span class="nav-next"><?php previous_posts_link('Newer FAQs <i class="fa fa-arrow-right"></i>') ?></span>
+						</div>
 						<?php while( have_posts() ): the_post(); ?>
-							<div class="faq-single">
+							<div class="faq-single archive-list">
 								<h2> <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
 								<img src=" <?php bloginfo(template_directory) ?>/img/faqthumbnail.png" alt="mcclelland insurance faq image">
 								<p><?php the_excerpt(); ?></p>
 							</div>
 						<?php endwhile ?>
-						<div class="nav-previous"><?php next_posts_link('Older FAQs') ?></div>
-						<div class="nav-next"><?php previous_posts_link('Newer FAQs') ?></div>
 					</div>
 					<div class="right-sidebar">
 						<h2>Recent FAQs</h2>
