@@ -9,14 +9,14 @@
 
 get_header(); ?>
 
-	<section id="primary" class="content-area">
-		<main id="main" class="site-main" role="main">
+<section id="primary" class="content-area">
+	<main id="main" class="site-main content-box" role="main">
 
 		<?php if ( have_posts() ) : ?>
 
-			<header class="page-header">
-				<h1 class="page-title"><?php printf( esc_html__( 'Search Results for: %s', 'mcclellandinsurance' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
-			</header><!-- .page-header -->
+			<div class="page-heading">
+				<h2 class="page-title"><?php printf( esc_html__( 'Search Results for: %s', 'mcclellandinsurance' ), '<span>' . get_search_query() . '</span>' ); ?></h2>
+			</div><!-- .page-header -->
 
 			<?php /* Start the Loop */ ?>
 			<?php while ( have_posts() ) : the_post(); ?>
@@ -32,7 +32,10 @@ get_header(); ?>
 
 			<?php endwhile; ?>
 
-			<?php the_posts_navigation(); ?>
+			<div class="next-posts-links">
+			<span class="nav-previous"><?php next_posts_link('<i class="fa fa-arrow-left"></i> Next Page') ?></span>
+				<span class="nav-next"><?php previous_posts_link('Previous Page <i class="fa fa-arrow-right"></i>') ?></span>
+			</div>
 
 		<?php else : ?>
 
@@ -40,8 +43,7 @@ get_header(); ?>
 
 		<?php endif; ?>
 
-		</main><!-- #main -->
-	</section><!-- #primary -->
+	</main><!-- #main -->
+</section><!-- #primary -->
 
-<?php get_sidebar(); ?>
 <?php get_footer(); ?>
