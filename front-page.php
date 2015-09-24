@@ -2,7 +2,7 @@
 
 get_header(); ?>
 
-	<div id="primary" class="content-area">
+	<div id="primary" class="content-area home">
 		<main id="main" class="site-main" role="main">
 			<div class="main-gallery">
 				<?php while( has_sub_field('gallery_image') ): ?>
