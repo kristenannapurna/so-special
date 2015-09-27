@@ -167,7 +167,6 @@ function submenu_get_children_ids( $id, $items ) {
     return $ids;
 }
 
-
 function getMcClellandPageName($post) {
 	if(empty($post->post_parent)) {
 		return get_the_title($post->ID);
