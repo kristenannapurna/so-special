@@ -96,7 +96,12 @@ input{
 		background:white;
 		padding:10px 20px;
 		display:none;
-		width:280px;
+		&.personal {
+			width:210px;
+		}
+		&.commercial {
+			width:280px;
+		}
 		ul {
 			list-style-type:none;
 			margin:0;
@@ -106,13 +111,32 @@ input{
 
 				padding:5px;
 
+				ul {
+					margin-left:15px;
+				}
+
 				a {
 					color: lighten($grey, 30%);
 					@include font-size(16);
+					width:100%;
+					display:block;
+
+					&:hover{
+						border-bottom:none;
+						span {
+							border-bottom: 2px solid rgba(255, 191, 56, 0.76);
+						}
+					}
 				}
 
-				&.current_page_item a {
-					border-bottom: 2px solid rgba(255, 191, 56, 0.76);
+				&.current_page_item {
+					a span {
+						border-bottom: 2px solid rgba(255, 191, 56, 0.76);
+					}
+
+					li a span {
+						border-bottom:none;
+					}
 				}
 			}
 		}

@@ -167,6 +167,23 @@ function submenu_get_children_ids( $id, $items ) {
     return $ids;
 }
 
+
+function getMcClellandPageName($post) {
+	if(empty($post->post_parent)) {
+		return get_the_title($post->ID);
+	} else {
+		return getMcClellandPageName(get_post($post->post_parent)) . "<span>></span>" . get_the_title($post->ID);
+	}
+}
+
+function getMcClellandMenuName($post, $asLowerCase = true) {
+	if(empty($post->post_parent)) {
+		return $asLowerCase ? strtolower(get_the_title( $post->ID )) : get_the_title($post->ID);
+	} else {
+		return getMcClellandMenuName(get_post($post->post_parent), $asLowerCase);
+	}
+}
+
 /**
  * Implement the Custom Header feature.
  */
