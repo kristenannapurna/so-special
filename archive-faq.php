@@ -39,7 +39,8 @@ get_header(); ?>
 											'pad_counts' => 0,
 											'heirarchical' => 1,
 											'taxonomy' => $tax,
-											'title_li' => ''
+											'title_li' => '',
+											'show_option_none'=>''
 										);
 									wp_list_categories( $args );
 								}
