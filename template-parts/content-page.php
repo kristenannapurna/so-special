@@ -12,22 +12,19 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<nav class="clearfix page-heading">
 		<h2 class="entry-title">
-			<?if(empty($post->post_parent)):?>
-				<?=get_the_title($post->ID)?>
-			<?else:?>
-				<?=get_the_title($post->post_parent)?><span>></span><?=get_the_title($post->ID)?>
-			<?endif?>
+			<?=getMcClellandPageName($post)?>
 		</h2>
 		<?php $submenu = wp_nav_menu( [
-			"menu"=> empty( $post->post_parent ) ? strtolower(get_the_title( $post->ID )) : strtolower(get_the_title( $post->post_parent ) ), 
-    		"submenu" => empty( $post->post_parent ) ? get_the_title( $post->ID ) : get_the_title( $post->post_parent ) ,
-			"depth"=>1,
+			"menu"=> getMcClellandMenuName($post),
+    		"submenu" => getMcClellandMenuName($post, false), 
+			"link_before"=>"<span>",
+			"link_after"=>"</span>",
 			"echo"=>0
 		]); ?>
 		<?if($submenu):?>
 			<div class="entry-submenu-holder">
 				<a href="#" class="entry-submenu-button">&#9776;</a>
-				<div class="entry-submenu">
+				<div class="entry-submenu <?echo getMcClellandMenuName($post)?>">
 					<?=$submenu?>
 				</div>
 			</div>
