@@ -11,8 +11,8 @@
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<nav class="clearfix page-heading">
-		<h2 class="entry-title">
-			<?=getMcClellandPageName($post)?>
+		<h2 class="entry-title grid-11">
+			<?=getMcClellandPageName($post, true)?>
 		</h2>
 		<?php $submenu = wp_nav_menu( [
 			"menu"=> getMcClellandMenuName($post),
@@ -22,7 +22,7 @@
 			"echo"=>0
 		]); ?>
 		<?if($submenu):?>
-			<div class="entry-submenu-holder">
+			<div class="entry-submenu-holder grid-1">
 				<a href="#" class="entry-submenu-button">&#9776;</a>
 				<div class="entry-submenu <?echo getMcClellandMenuName($post)?>">
 					<?=$submenu?>

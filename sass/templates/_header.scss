@@ -21,16 +21,27 @@ header{
 	padding-top: 10px;
 	background-image: url(img/topbanner-BG.png);
 	.site-branding{
-		width: 20%;
-		float: left;
-		margin-right: 2%;
 		h1{
 			margin: 0;
+			a {
+				display:block;
+				text-align:center;
+			}
+		}
+	}
+	.mobile-navigation {
+		display:none;
+		@include font-size(40);
+		margin-top:22px;
+		text-align:center;
+		a {
+			color:white;
+		}
+		@include bp(small) {
+			display:block;
 		}
 	}
 	.main-navigation{
-		width: 56%;
-		float: left;
 		.claims::before{
 			@include menuImg('img/claims.png');
 		}
@@ -64,11 +75,12 @@ header{
 				// @include font-size(14);
 			}
 		}
+
+		@include bp(small) {
+			display:none;
+		}
 	}
 	.search-container{
-		width: 20%;
-		float: left;
-		margin-left: 2%;
 		position: relative;
 		padding-top: 20px;
 		.search_icon{
@@ -86,7 +98,11 @@ header{
 			padding: 4px 4px 4px 40px;
 			box-shadow: inset 0px 1px 10px #303030;
 		}
-	}
+		
+		@include bp(small) {
+			display:none;
+		}
+	}	
 }
 
 
@@ -140,6 +156,58 @@ header{
 			li{
 				width: 20%;
 			}
+		}
+	}
+
+	@include bp(small) {
+		display:none;
+	}
+}
+
+.mobile-nav {
+	display:none;
+	position: absolute;
+	top:128px;
+    background-color: white;
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+
+    .claims::before{
+		@include menuImg('img/mobile-speechbubble.png');
+		
+	}
+	.service-request::before{
+		@include menuImg('img/mobile-envelope.png');
+	}
+	.contact-us::before{
+		@include menuImg('img/mobile-marker.png');	
+	}
+	.request-quote::before{
+		@include menuImg('img/mobile-calculator.png');
+	}
+	.sign-in::before{
+		@include menuImg('img/mobile-login.png');
+	}
+	.personal:before{
+		@include menuImg('img/mobile-personal.png');
+		width: 68px;
+	}
+	.commercial:before{
+		@include menuImg('img/mobile-commercial.png');
+		height: 70px;
+		width: 73px;
+	}
+
+	ul {
+		list-style:none;
+		margin:0;
+		padding:0;
+
+		li a {
+			@include font-size(25);
+			position:relative;
+			top:-10px;
 		}
 	}
 }

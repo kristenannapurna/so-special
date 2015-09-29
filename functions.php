@@ -167,11 +167,12 @@ function submenu_get_children_ids( $id, $items ) {
     return $ids;
 }
 
-function getMcClellandPageName($post) {
+function getMcClellandPageName($post, $isMainPage) {
 	if(empty($post->post_parent)) {
-		return get_the_title($post->ID);
+		return $isMainPage ? get_the_title($post->ID) : "<span class='pageParents'>" . get_the_title($post->ID);
 	} else {
-		return getMcClellandPageName(get_post($post->post_parent)) . "<span>></span>" . get_the_title($post->ID);
+		$theTitle = $isMainPage ? "</span>" . get_the_title($post->ID) : get_the_title($post->ID);
+		return getMcClellandPageName(get_post($post->post_parent), false) . "<span>></span>" . $theTitle;
 	}
 }
 
