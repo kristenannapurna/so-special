@@ -14,5 +14,6 @@ $(function() {
 	$(".entry-submenu-button").click(function(e) {
 		e.preventDefault();
 		$(".entry-submenu").toggle();
-	})
+	});
 });
+
