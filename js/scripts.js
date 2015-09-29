@@ -26,5 +26,6 @@ $(function() {
 			$("#content").css("opacity", 0);
 			$("#colophon").css("opacity", 0);
 		}
-	})
+	});
 });
+
