@@ -32,10 +32,10 @@ $employeeQuery = new WP_Query([
 				</nav>
 
 				<div class="wrapper clearfix">
-					<div class="entry-content grid-12 pad-2">
+					<div class="entry-content employee-content grid-12 pad-2">
 						<div class="grid-12">
 							<?php $num = 0; while( $employeeQuery->have_posts() ): $employeeQuery->the_post();$num++ ?>
-								<div class="grid-4 s-grid-12 pad-2 employee">
+								<div class="grid-4 s-grid-12 pad-2 employeeBox">
 									<div class="employeeImageHolder">
 										<?php echo the_post_thumbnail([150,150]);?>
 									</div>
@@ -52,9 +52,7 @@ $employeeQuery = new WP_Query([
 										</a>
 									<?endif?>
 									<p class="employeeLine">____________________</p>
-									<p>
-										<?=the_content()?>
-									</p>
+									<?=the_content()?>
 								</div>
 								<?if($num % 3 == 0):?></div><div class="grid-12"><?endif?>
 							<?endwhile?>
