@@ -14,9 +14,9 @@ get_header(); ?>
 
 		<?php if ( have_posts() ) : ?>
 
-			<div class="page-heading">
-				<h2 class="page-title"><?php printf( esc_html__( 'Search Results for: %s', 'mcclellandinsurance' ), '<span>' . get_search_query() . '</span>' ); ?></h2>
-			</div><!-- .page-header -->
+			<nav class=" clearfix page-heading">
+				<h2 class="page-title"><?php printf( esc_html__( 'Search Results for:%s', 'mcclellandinsurance' ), '<span>' . get_search_query() . '</span>' ); ?></h2>
+			</nav><!-- .page-header -->
 
 			<?php /* Start the Loop */ ?>
 			<?php while ( have_posts() ) : the_post(); ?>

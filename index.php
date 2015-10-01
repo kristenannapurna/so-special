@@ -65,6 +65,10 @@ get_header(); ?>
 						        </article><!-- #post-<?php the_ID(); ?> -->
 
 						    <?php endwhile; ?>
+						    <div class="next-posts-links">
+						    	<span class="nav-next"><?php previous_posts_link('<i class="fa fa-arrow-left"></i> Newer Posts') ?></span>
+						    	<span class="nav-previous"><?php next_posts_link('Older Posts <i class="fa fa-arrow-right"></i>') ?></span>
+						    </div>
 					</div>
 					<div class="right-sidebar">
 						<h2>Recent Posts</h2>

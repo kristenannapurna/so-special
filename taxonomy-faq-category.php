@@ -16,30 +16,36 @@ get_header(); ?>
 
 			<div class="content-box faq">
 				<nav class="clearfix page-heading">
-					<h2><a href="http://mcclellandinsurance.com/faq">News</a></h2>
+					<h2><a href="http://mcclellandinsurance.com/faq">FAQ</a></h2>
+					<p><a href="#">Add A Question</a></p>
 				</nav>
 				<div class="faq-archive_container clearfix">
 					<div class="left-sidebar">
 						<form id="searchform" action="<?php bloginfo('home'); ?>/" method="get">
-						        <input class="inlineSearch" type="text" name="s" placeholder="Search..." onblur="if (this.value == '') {this.value = 'Search';}" onfocus="if (this.value == 'Search') {this.value = '';}" />
+						        <input class="inlineSearch" type="text" name="s" placeholder="Search FAQ..." onblur="if (this.value == '') {this.value = 'Search FAQ';}" onfocus="if (this.value == 'Search FAQ') {this.value = '';}" />
+						        <input type="hidden" name="post_type" value="faq" />
 						</form>
 						<h2>Categories</h2>
 						<?php 
-							$args = array(
-								'title_li' => null
-								);
-						wp_list_categories( $args ); ?>
-						<h2>Tags</h2>
-						<ul class="tags">
-							<?php 
-								$tags = get_tags();
-								if ($tags) {
-								foreach ($tags as $tag) {
-								echo '<li><a href="' . get_tag_link( $tag->term_id ) . '" title="' . sprintf( __( "View all posts in %s" ), $tag->name ) . '" ' . '>' . $tag->name.'</a> </li> ';
-									}
+							$faq = get_object_taxonomies('faq');
+
+							if($faq)
+							{
+								foreach($faq as $tax)
+								{
+									$args = array(
+											'orderby' => 'name',
+											'show_count' => 0,
+											'pad_counts' => 0,
+											'heirarchical' => 1,
+											'taxonomy' => $tax,
+											'title_li' => '',
+											'show_option_none'=>''
+										);
+									wp_list_categories( $args );
 								}
-							 ?>
-						</ul>
+							}
+						 ?>
 					</div>
 					<div class="faqs">
 						<div class="next-posts-links">
@@ -56,7 +62,7 @@ get_header(); ?>
 						<?php endwhile ?>
 					</div>
 					<div class="right-sidebar">
-						<h2>Recent Posts</h2>
+						<h2>Recent FAQs</h2>
 						<?php $recentFAQ = new WP_Query(
 							array(
 								'posts_per_page' => 3,

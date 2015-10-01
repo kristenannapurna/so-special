@@ -3,7 +3,7 @@
 	<?php 
 		$recentFAQ = new WP_Query([
 			'posts_per_page' => 3,
-			'post_type' => 'employee',
+			'post_type' => 'faq',
 			'order' => 'ASC'
 		]);
 	?>
