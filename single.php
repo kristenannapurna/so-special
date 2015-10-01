@@ -56,7 +56,7 @@ get_header(); ?>
 						            <?php if( has_post_thumbnail() ){
 						            	the_post_thumbnail();
 						            	} ?>
-						            <?php the_excerpt(); ?>
+						            <?php the_content(); ?>
 
 						        </article><!-- #post-<?php the_ID(); ?> -->
 

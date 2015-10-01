@@ -59,7 +59,6 @@ header{
 		}
 		li{
 			width: 20%;
-			transition: all 0.5s;
 			// text-align: center;
 			&:hover{
 				border-bottom: 2px solid rgba(255,191,56,0.76);
@@ -128,13 +127,16 @@ header{
 				display: inline-block;
 				transition: color 0.5s;
 				&:hover{
-					color: rgba(255,191,56,.76);
+					border-bottom: 2px solid rgba(255,191,56,0.76);
 				}
 			}
 		}
 		.personal{
 			position: relative;
 			top: 25px;
+		}
+		.personal a, .commercial a{
+			border-bottom: 2px solid transparent;
 		}
 		.personal:before{
 			@include menuImg('img/personal.png');
