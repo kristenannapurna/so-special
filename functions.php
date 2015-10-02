@@ -176,6 +176,14 @@ function getMcClellandPageName($post, $isMainPage) {
 	}
 }
 
+function getMcClellandPageParentName($post) {
+	if(empty($post->post_parent)) {
+		return get_the_title($post->ID);
+	} else {
+		return getMcClellandPageParentName(get_post($post->post_parent));
+	}
+}
+
 function getMcClellandMenuName($post, $asLowerCase = true) {
 	if(empty($post->post_parent)) {
 		return $asLowerCase ? strtolower(get_the_title( $post->ID )) : get_the_title($post->ID);
