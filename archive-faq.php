@@ -19,9 +19,9 @@ get_header(); ?>
 					<h2><a href="http://mcclellandinsurance.com/faq">FAQ</a></h2>
 					<p><a href="#">Add A Question</a></p>
 				</nav>
-				<div class="faq-archive_container clearfix">
+				<div class="faq-archive_container clearfix desktop">
 					
-					<?include('template-parts/archive-faq/categories.php')?>
+					<?include('template-parts/archive-faq/categories.php');?>
 
 					<div class="faqs">
 						<div class="next-posts-links">
@@ -37,8 +37,17 @@ get_header(); ?>
 						<?php endwhile ?>
 					</div>
 					
-					<?include('template-parts/archive-faq/recent-faq.php')?>
-					
+					<?include('template-parts/archive-faq/recent-faq.php');?>
+				</div>
+				<div class="faq-archive_container clearfix mobile">
+					<?php
+					$mobileFAQ = new WP_Query([
+						'posts_per_page' => -1,
+						'post_type' => 'faq'
+					]);
+					while( $mobileFAQ->have_posts() ): $mobileFAQ->the_post(); ?>
+						<h2> <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
+					<?endwhile?>
 				</div>
 			</div> <!-- /.content-box -->
 		<?php else : ?>

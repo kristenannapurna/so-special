@@ -90,6 +90,28 @@
 
 		}
 	}
+
+	&.mobile {
+		display:none;
+		padding:0 20px;
+	}
+
+	@include bp(small) {
+		&.mobile {
+			display:block;
+		}
+		&.desktop {
+			display:none;
+		}
+
+		.left-sidebar, .right-sidebar {
+			display: none;
+		}
+
+		.faqs {
+			width:100%;
+		}
+	}
 }
 
 

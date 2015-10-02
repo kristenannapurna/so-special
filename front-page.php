@@ -8,12 +8,12 @@ get_header(); ?>
 				<?php while( has_sub_field('gallery_image') ): ?>
 					<div class="gallery-cell"><img src="<?php the_sub_field('image') ?>" alt=""></div>
 				<?php endwhile ?>
-
-
-
-				
 			</div>
 			
+
+			<div id="content" class="site-content mobile-main content-box">
+					<?php wp_nav_menu( array( 'theme_location' => 'services', 'menu_id' => 'services' ) ); ?>				</div>
+			</div>
 
 		</main><!-- #main -->
 	</div><!-- #primary -->
