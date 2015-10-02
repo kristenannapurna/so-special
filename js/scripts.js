@@ -27,5 +27,11 @@ $(function() {
 			$("#colophon").css("opacity", 0);
 		}
 	});
+
+	$("#desktop-sub-menu .menu-item-has-children").hover(function() {
+		$(this).children("ul.sub-menu").toggle();
+	}, function() {
+		$(this).find("ul.sub-menu").toggle();
+	});
 });
 
