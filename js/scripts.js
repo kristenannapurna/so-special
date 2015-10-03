@@ -33,5 +33,15 @@ $(function() {
 	}, function() {
 		$(this).find("ul.sub-menu").toggle();
 	});
+
+	while(parseInt($("#desktop-sub-menu ul").css("width")) > 850) {
+		if($("#desktop-sub-menu ul li:last-of-type").hasClass("current_page_item")) {
+			$("#desktop-sub-menu ul li:nth-last-of-type(2)").remove();
+		} else {
+			$("#desktop-sub-menu ul li:last-of-type").remove();
+		}
+		$(".entry-submenu-holder").css("display", "block");
+	}
+
 });
 

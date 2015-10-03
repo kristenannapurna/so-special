@@ -21,7 +21,18 @@
 			"link_before"=>"<span>",
 			"link_after"=>"</span>",
 			"echo"=>0
-		]); ?>
+		]);
+
+		if(! $submenu  && wp_get_nav_menu_object(getMcClellandMenuName($post))) {
+			$submenu = wp_nav_menu( [
+				"menu"=> getMcClellandMenuName($post),
+				"link_before"=>"<span>",
+				"link_after"=>"</span>",
+				"echo"=>0
+			]);
+		}
+
+		?>
 		<?if($submenu):?>
 			<div id="desktop-sub-menu">
 				<?=$submenu?>
@@ -35,7 +46,7 @@
 		<?endif?>
 	</nav><!-- .entry-header -->
 
-	<div class="entry-content">
+	<div class="entry-content clearfix">
 		<?php the_content(); ?>
 		<?php
 			wp_link_pages( array(

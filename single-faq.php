@@ -1,5 +1,7 @@
 <?php
 /**
+ * Template Name: Single FAQ
+ *
  * The template for displaying all single faq posts.
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/#single-post
@@ -17,7 +19,7 @@ get_header(); ?>
 			<div class="content-box faq">
 				<nav class="clearfix page-heading">
 					<h2><a href="http://mcclellandinsurance.com/faq">FAQ</a></h2>
-					<p><a href="#">Add A Question</a></p>
+					<p><a href="index.php?page_id=784">Add A Question</a></p>
 				</nav>
 				<div class="faq-archive_container clearfix">
 		

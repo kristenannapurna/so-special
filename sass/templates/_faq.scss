@@ -122,3 +122,29 @@
 	margin-right: 20px;
 	} 
 }
+
+
+.modal{
+	background: #fff;
+	width: 75%;
+	position: fixed;
+	z-index: 9999999;
+	top: 5%;
+	left: 15%;
+	padding: 20px;
+	border: 3px solid $grey;
+	font-size: 12px;
+	display: none;
+	span{
+		text-align: right;
+		display:block;
+		font-size: 20px;
+		&:hover{
+			cursor: pointer;
+		}
+	}
+}
+
+.modal.visible{
+	display: block;
+}

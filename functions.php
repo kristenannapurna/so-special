@@ -47,7 +47,8 @@ function mcclellandinsurance_setup() {
 		'services' => esc_html__( 'Services Menu', 'mcclellandinsurance' ),
 		'personal' => esc_html__( 'Personal Menu', 'mcclellandinsurance'),
 		'commercial' => esc_html__( 'Commercial Menu', 'mcclellandinsurance'),
-		'info' => esc_html__( 'Info Menu', 'mcclellandinsurance')
+		'info' => esc_html__( 'Info Menu', 'mcclellandinsurance'),
+		'request-a-quote' => esc_html__( 'Request A Quote', 'mcclellandinsurance')
 	) );
 
 	/*
@@ -186,7 +187,8 @@ function getMcClellandPageParentName($post) {
 
 function getMcClellandMenuName($post, $asLowerCase = true) {
 	if(empty($post->post_parent)) {
-		return $asLowerCase ? strtolower(get_the_title( $post->ID )) : get_the_title($post->ID);
+		$title = str_replace(" ", "-", get_the_title( $post->ID ));
+		return $asLowerCase ? strtolower($title) : $title;
 	} else {
 		return getMcClellandMenuName(get_post($post->post_parent), $asLowerCase);
 	}
@@ -237,3 +239,5 @@ function query_post_type($query) {
 }
 
 add_filter('pre_get_posts', 'query_post_type');
+
+
