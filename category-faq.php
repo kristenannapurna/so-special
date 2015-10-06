@@ -41,6 +41,7 @@ get_header(); ?>
 					<?include('template-parts/archive-faq/recent-faq.php')?>
 					
 				</div>
+				<div id="content-cursor" data-post-parent="faq"></div>
 			</div> <!-- /.content-box -->
 		<?php else : ?>
 

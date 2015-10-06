@@ -30,6 +30,8 @@
 	.left-sidebar, .faqs, .right-sidebar{
 		float: left;
 		padding: 20px;
+		max-height: 400px;
+		overflow:scroll;
 	}
 	.left-sidebar, .right-sidebar{
 		width: 20%;

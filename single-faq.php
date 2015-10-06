@@ -11,7 +11,7 @@
 
 get_header(); ?>
 
-	<div id="primary" class="content-area">
+	<div id="primary" class="content-area faq">
 		<main id="main" class="site-main" role="main">
 
 		<?php if ( have_posts() ) : ?>
@@ -36,6 +36,7 @@ get_header(); ?>
 					</div>
 					<?include('template-parts/archive-faq/recent-faq.php');?>
 				</div>
+				<div id="content-cursor" data-post-parent="faq"></div>
 			</div> <!-- /.content-box -->
 		<?php else : ?>
 

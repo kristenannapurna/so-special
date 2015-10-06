@@ -61,6 +61,7 @@ $employeeQuery = new WP_Query([
 						<? wp_reset_postdata()?>
 					</div>
 				</div>
+				<div id="content-cursor" data-post-parent="<?echo getMcClellandMenuName($post)?>"></div>
 			</div> <!-- /.content-box -->
 		<?php else : ?>
 

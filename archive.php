@@ -74,6 +74,7 @@ get_header(); ?>
 					</div>
 					
 				</div>
+				<div id="content-cursor" data-post-parent="news"></div>
 			</div> <!-- /.content-box -->
 		<?php else : ?>
 

@@ -60,4 +60,5 @@
 		<?php edit_post_link( esc_html__( 'Edit', 'mcclellandinsurance' ), '<span class="edit-link">', '</span>' ); ?>
 	</footer><!-- .entry-footer -->
 </article><!-- #post-## -->
+<div id="content-cursor" data-post-parent="<?echo getMcClellandMenuName($post)?>"></div>
 

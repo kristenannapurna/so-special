@@ -43,5 +43,18 @@ $(function() {
 		$(".entry-submenu-holder").css("display", "block");
 	}
 
+	setCursor();
+	
+	$(window).resize(function() {
+		setCursor();
+	});
+
 });
+
+function setCursor() {
+	var offset = $("#content-cursor").offset().left - $("#content-cursor").position().left;
+	$("#content-cursor").css("left",(
+		$("#secondary-nav li." + $("#content-cursor").data("post-parent")).position().left + ( $("#secondary-nav li." + $("#content-cursor").data("post-parent")).width() / 5) - offset)
+	);
+}
 

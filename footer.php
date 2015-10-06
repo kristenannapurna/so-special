@@ -10,7 +10,19 @@
  */
 
 ?>
-
+		<div class="secondary-nav">
+			<nav id="secondary-nav" class="secondary-navigation" role="navigation">
+				<div class="wrapper clearfix">
+					<ul class="menu clearfix">
+						<li class="personal"><a href="http://localhost:8888/mcclellandinsurance/personal">Personal</a></li>
+						<li class="commercial"><a href="http://localhost:8888/mcclellandinsurance/commercial">Commercial</a></li>
+					</ul>
+					<div class="info-menu">
+						<?php wp_nav_menu( array( 'theme_location' => 'info', 'menu_id' => 'info' ) ); ?>
+					</div>
+				</div>
+			</nav>
+		</div> <!-- /secondary-nav -->
 	</div><!-- #content -->
 
 	<footer id="colophon" class="site-footer" role="contentinfo">

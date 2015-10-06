@@ -9,7 +9,7 @@
 
 get_header(); ?>
 
-	<div id="primary" class="content-area">
+	<div id="primary" class="content-area news">
 		<main id="main" class="site-main" role="main">
 
 		<?php if ( have_posts() ) : ?>
@@ -81,6 +81,7 @@ get_header(); ?>
 					</div>
 					
 				</div>
+				<div id="content-cursor" data-post-parent="<?echo getMcClellandMenuName($post)?>"></div>
 			</div> <!-- /.content-box -->
 		<?php else : ?>
 

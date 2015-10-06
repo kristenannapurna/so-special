@@ -49,6 +49,8 @@ get_header(); ?>
 						<h2> <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
 					<?endwhile?>
 				</div>
+
+				<div id="content-cursor" data-post-parent="faq"></div>
 			</div> <!-- /.content-box -->
 		<?php else : ?>
 
