@@ -128,7 +128,10 @@ function mcclellandinsurance_scripts() {
 	$jquery_cdn = "https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js";
 	wp_enqueue_script( 'jquery', $jquery_cdn, array(), '20130115', true );
 
-	wp_enqueue_script('scripts', get_template_directory_uri() . '/js/scripts.js', array('jquery'));
+	$google_maps = "https://maps.googleapis.com/maps/api/js";
+	wp_enqueue_script( 'maps', $google_maps, array('jquery'), true);
+
+	wp_enqueue_script('scripts', get_template_directory_uri() . '/js/scripts.js', array('jquery', 'maps'));
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );

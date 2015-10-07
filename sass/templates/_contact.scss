@@ -1,0 +1,29 @@
+.branch-address{
+	color: lighten($grey, 20%);
+	@include font-size(16);
+	h2{
+		@include font-size(16);
+		text-transform: uppercase;
+		margin-bottom: 5px;
+		margin-top: 0;
+	}
+	address{
+		font-style: normal;
+		margin-bottom: 10px;
+	}
+	.phone, .email{
+		margin-bottom: 10px;
+		p{
+			margin: 0;
+			padding: 0;
+		}
+		a{
+			color: #B65E5D;
+		}
+	}
+	}
+
+	.branch-map{
+		max-width: 400px;
+		height: 300px;
+	}

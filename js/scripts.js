@@ -45,12 +45,15 @@ $(function() {
 	}
 
 	windowResize();
+	setHeight(heightElements);
 	
 	$(window).resize(function() {
 		windowResize();
 	});
-
+	map.loadMap();
 });
+
+//end of doc ready
 
 function realWidth(obj){
     var clone = obj.clone();
@@ -102,17 +105,40 @@ var heightElements = ['.entry-content', '.faqs', '.left-sidebar', '.right-sideba
 function setHeight(element){
 		var viewport = $(window).height();
 		var headers = $('.main-nav').outerHeight() + $('.secondary-nav').outerHeight();
-		var contentPadding = $(".content-area").outerHeight() - $(".content-area").height();
+		var contentPadding = ($(".content-area").outerHeight() - $(".content-area").height());
+		var faqPadding = $('.faqs').outerHeight() - $('.faqs').height();
 		var heading = $('.page-heading').outerHeight();
+		var elementHeight = viewport - headers - contentPadding - heading - 50 + "px";
+		var faqHeight = viewport - headers - faqPadding - heading + 'px';
 
-		var elementHeight = viewport - headers - contentPadding - heading - 30 + "px";
-
-		console.log("viewport - (main-nav + secondary-nav) - contentPadding - page heading = ");
-		console.log(viewport + " - (" + $(".main-nav").outerHeight() + " + " + $('.secondary-nav').outerHeight() + ") - " + contentPadding + " = " + elementHeight);
 		$(element).each(function(index, element){
-			$(element).css('height', (
-				elementHeight)
-				);
+			if (element === '.faqs' || element === '.left-sidebar' || element === '.right-sidebar'){
+				console.log('I am setting ' + element + ' to ' + faqHeight);
+				$(element).css('height', (
+					faqHeight)
+					);
+			} else{
+				console.log('I am setting ' + element + ' to ' + faqHeight);
+				$(element).css('height', (
+					elementHeight)
+					);
+			}
 		});
 	}
 
+//build zee map!
+
+var map = {};
+
+map.loadMap = function(){
+	var mapOptions = {
+		center: { 
+			lat: 43.264009,
+			lng: -79.874947
+		},
+		zoom: 8
+	};
+	var mapDiv = $('.branch-map')[0];
+
+	map.map = new google.maps.Map(mapDiv, mapOptions);
+}
