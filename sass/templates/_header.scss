@@ -1,8 +1,9 @@
 header{
 	position: fixed;
-	background: url(img/main-BG.png);
+	background: url(img/topbanner-BG.png);
 	z-index: 99999;
 	width:100%;
+	min-height:89px;
 }
 
 
@@ -37,7 +38,7 @@ header{
 		a {
 			color:white;
 		}
-		@include bp(small) {
+		@include bp(max, 730px) {
 			display:block;
 		}
 	}
@@ -75,7 +76,7 @@ header{
 			}
 		}
 
-		@include bp(small) {
+		@include bp(max, 730px) {
 			display:none;
 		}
 	}
@@ -96,9 +97,12 @@ header{
 			border: none;
 			padding: 4px 4px 4px 40px;
 			box-shadow: inset 0px 1px 10px #303030;
+			@include bp(medium) {
+				font-size:13px;
+			}
 		}
 		
-		@include bp(small) {
+		@include bp(max, 730px) {
 			display:none;
 		}
 	}	
@@ -212,6 +216,10 @@ header{
 			position:relative;
 			top:-10px;
 		}
+	}
+
+	.search-container input {
+		width:100%;
 	}
 }
 

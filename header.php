@@ -33,11 +33,11 @@
 					<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><img src=" <?php bloginfo('template_directory') ?>/img/mcclellandlogo.png " alt="McClelland Insurance Logo"></a></h1>
 				</div><!-- .site-branding -->
 				<div class="mobile-navigation s-grid-2"><a href="#" id="mainMobileNavigation">&#9776;</a></div>
-				<nav id="site-navigation" class="main-navigation grid-6" role="navigation">
+				<nav id="site-navigation" class="main-navigation grid-6 m-grid-8" role="navigation">
 					<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Services Menu', 'mcclellandinsurance' ); ?></button>
 					<?php wp_nav_menu( array( 'theme_location' => 'services', 'menu_id' => 'services' ) ); ?>
 				</nav><!-- #site-navigation -->
-				<div class="search-container grid-3">
+				<div class="search-container grid-3 m-grid-1">
 					<form method="get" id="searchform" role="search" action="<?php bloginfo('url'); ?>/">
 						<div>
 							<label class="search_icon" for="s"></label>
@@ -57,6 +57,15 @@
 				<li class="personal"><a href="http://mcclellandinsurance.com/personal">Personal</a></li>
 				<li class="commercial"><a href="http://mcclellandinsurance.com/commercial">Commercial</a></li>
 			</ul>
+			<hr/>
+			<div class="search-container">
+				<form method="get" id="searchform" role="search" action="<?php bloginfo('url'); ?>/">
+					<div>
+						<label class="search_icon" for="s"></label>
+						<input type="text" name="s" value="Search..." onfocus="if(this.value==this.defaultValue)this.value='';" onblur="if(this.value=='')this.value=this.defaultValue;"/>
+					</div>
+				</form>
+			</div>
 			<hr/>
 			<div class="info-menu">
 				<?php wp_nav_menu( array( 'theme_location' => 'info', 'menu_id' => 'info' ) ); ?>

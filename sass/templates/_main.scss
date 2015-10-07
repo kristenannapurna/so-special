@@ -63,6 +63,10 @@ input{
 	    left: 11111205px;
 	    width: 77px;
 		position:absolute;
+
+		@include bp(small) {
+			display:none;
+		}
 	}
 	h3{
 		text-transform: uppercase;
@@ -165,7 +169,6 @@ input{
 	}
 	.entry-content {
 		padding:0 30px;
-		max-height: 350px;
 		overflow:scroll;
 
 		ul {
@@ -266,4 +269,16 @@ input{
 section.not-found{
 	margin-top: 20px;
 	padding: 20px;
+}
+
+//make scrollbar visible
+::-webkit-scrollbar {
+    -webkit-appearance: none;
+    width: 7px;
+    margin-top: 5px;
+}
+::-webkit-scrollbar-thumb {
+    border-radius: 4px;
+    background-color: rgba(0,0,0,.2);
+    -webkit-box-shadow: 0 0 1px rgba(255,255,255,.5);
 }
