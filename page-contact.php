@@ -20,21 +20,21 @@ get_header(); ?>
 		<?php while ( have_posts() ) : the_post(); ?>
 
 			<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-				<nav class="clearfix page-heading">
+				<nav class="clearfix page-heading contact-page">
 					<h2 class="entry-title">
 						<span class='desktop'><?=getMcClellandPageParentName($post)?></span>
 						<span class='mobile'><?=the_title()?>
 						</h2>
 						<div id="desktop-sub-menu">
 							<ul class="menu">
-								<li class="current_page_item"><a href="#brampton"><span>Brampton</span></a></li>
-								<li><a href="#etobicoke"><span>Etobicoke</span></a></li>	
+								<li class="current_page_item"><a data-location="brampton" href="#brampton"><span>Brampton</span></a></li>
+								<li><a data-location="etobicoke"href="#etobicoke"><span>Etobicoke</span></a></li>	
 							</ul>
 						</div>
 					</nav><!-- .entry-header -->
 
 					<div class="entry-content clearfix">
-						<section id="brampton">
+						<section id="brampton" class="clearfix map-view">
 							<div class="branch-address">
 								<h2>Brampton Branch</h2>
 								<address>
@@ -54,11 +54,11 @@ get_header(); ?>
 								</div>
 								
 							</div>
-							<div class="branch-map">
+							<div class="branch-map" id="bramptonMap">
 								
 							</div>
 						</section>
-						<section id="etobicoke">
+						<section id="etobicoke" class="clearfix map-view">
 							<div class="branch-address">
 								<h2>Etobicoke Branch</h2>
 								<address>
@@ -76,7 +76,7 @@ get_header(); ?>
 									<a href="mailto:etobicoke@mcclellandinsurance.biz">etobicoke@mcclellandinsurance.biz</a>
 								</div>
 							</div>
-							<div class="branch-map">
+							<div class="branch-map" id="etobicokeMap">
 								
 							</div>
 						</section>

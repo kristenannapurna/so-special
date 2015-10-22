@@ -1,6 +1,23 @@
-.branch-address{
+#brampton, #etobicoke{
+	padding: 0 20px;
+	.branch-map{
+		float: right;
+		min-width: 450px;
+		height: 300px;
+		@include bp(max, 793px){
+			min-width: 300px;
+		}
+		@include bp(max, 645px){
+			width: 100%;
+		}
+	}
+	.branch-address{
+	float: left;
 	color: lighten($grey, 20%);
 	@include font-size(16);
+	@include bp(max, 645px){
+		width: 100%;
+	}
 	h2{
 		@include font-size(16);
 		text-transform: uppercase;
@@ -23,7 +40,12 @@
 	}
 	}
 
-	.branch-map{
-		max-width: 400px;
-		height: 300px;
+}
+#etobicoke{
+	display: none;
+	@include bp(max, 40em){
+		display: block;
 	}
+}
+
+

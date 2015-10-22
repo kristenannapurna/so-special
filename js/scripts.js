@@ -1,6 +1,22 @@
 
 
 $(function() {
+
+	//toggle contact page
+
+	$('.contact-page li').on('click', function(e){
+		e.preventDefault();
+		$('.contact-page li').removeClass('current_page_item');
+		$(this).addClass('current_page_item');
+
+		var location = $(this).find('a').data('location');
+		$('.map-view').css('display', 'none');
+		$('#'+location).css('display', 'block');
+		map.loadMap();
+		map.loadMarkers();
+	});
+
+
 	$('.main-gallery').flickity({
 		cellAlign: 'left',
 		contain: true,
@@ -50,7 +66,10 @@ $(function() {
 	$(window).resize(function() {
 		windowResize();
 	});
+
+	//load the maps! 
 	map.loadMap();
+	map.loadMarkers();
 });
 
 //end of doc ready
@@ -113,12 +132,12 @@ function setHeight(element){
 
 		$(element).each(function(index, element){
 			if (element === '.faqs' || element === '.left-sidebar' || element === '.right-sidebar'){
-				console.log('I am setting ' + element + ' to ' + faqHeight);
+				// console.log('I am setting ' + element + ' to ' + faqHeight);
 				$(element).css('height', (
 					faqHeight)
 					);
 			} else{
-				console.log('I am setting ' + element + ' to ' + faqHeight);
+				// console.log('I am setting ' + element + ' to ' + faqHeight);
 				$(element).css('height', (
 					elementHeight)
 					);
@@ -131,14 +150,62 @@ function setHeight(element){
 var map = {};
 
 map.loadMap = function(){
-	var mapOptions = {
+	var mapOptionsBrampton = {
 		center: { 
-			lat: 43.264009,
-			lng: -79.874947
+			lat: 43.6817224,
+			lng: -79.7172389
 		},
-		zoom: 8
+		zoom: 15
 	};
-	var mapDiv = $('.branch-map')[0];
 
-	map.map = new google.maps.Map(mapDiv, mapOptions);
-}
+	var mapOptionsEtobicoke = {
+		center: { 
+			lat: 43.6493002,
+			lng: -79.5034905
+		},
+		zoom: 16
+	};
+	var brampton = $('#bramptonMap')[0];
+	var etobicoke = $('#etobicokeMap')[0];
+
+	map.bramptonMap = new google.maps.Map(brampton, mapOptionsBrampton);
+	map.etobicokeMap = new google.maps.Map(etobicoke, mapOptionsEtobicoke);
+};
+
+ map.loadMarkers = function() {
+
+ 	var templateUrl = $('body').data('templateurl');
+
+      var brampton = new google.maps.Marker({
+        position: new google.maps.LatLng(43.6817224, -79.7172389),
+        map: map.bramptonMap, 
+        icon: templateUrl +'/img/mcclellandmapmarker.png',
+        animation: google.maps.Animation.BOUNCE
+ 
+      });
+
+      var infoWindow = new google.maps.InfoWindow();
+      //listen for a click on the previous marker 
+      google.maps.event.addListener(brampton, 'click', function(){
+        infoWindow.setContent($('#brampton address')[0]);
+        infoWindow.open(map.bramptonMap, this);
+      }); 
+
+      var etobicoke = new google.maps.Marker({
+        position: new google.maps.LatLng(43.6493002, -79.5034905),
+        map: map.etobicokeMap, 
+        icon: templateUrl +'/img/mcclellandmapmarker.png',
+        animation: google.maps.Animation.BOUNCE
+
+      });
+
+      var infoWindow = new google.maps.InfoWindow();
+
+      //listen for a click on the previous marker 
+	     google.maps.event.addListener(brampton, 'click', function(){
+	        infoWindow.setContent($('#etobicoke address')[0]);
+	        infoWindow.open(map.etobicokeMap, this);
+	      });
+
+
+    };

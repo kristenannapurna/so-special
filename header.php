@@ -22,7 +22,7 @@
 <?php wp_head(); ?>
 </head>
 
-<body <?php body_class(); ?>>
+<body data-templateUrl = '<?= bloginfo("template_url"); ?>' <?php body_class(); ?>>
 <div id="page" class="hfeed site">
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'mcclellandinsurance' ); ?></a>
 
