@@ -80,6 +80,7 @@ get_header(); ?>
 					</div>
 					
 				</div>
+				<div id="content-cursor" data-post-parent="faq"></div>
 			</div> <!-- /.content-box -->
 		<?php else : ?>
 

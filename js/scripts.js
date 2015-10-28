@@ -12,8 +12,10 @@ $(function() {
 		var location = $(this).find('a').data('location');
 		$('.map-view').css('display', 'none');
 		$('#'+location).css('display', 'block');
-		map.loadMap();
-		map.loadMarkers();
+		if($(".map-view").size() >= 1) {
+			map.loadMap();
+			map.loadMarkers();
+		}
 	});
 
 
@@ -35,7 +37,7 @@ $(function() {
 	$("#mainMobileNavigation").click(function(e) {
 		e.preventDefault();
 		$("#mobileMenu").toggle();
-		if($("#content").css("opacity") === 0 || $("#colophon").css("opacity") === 0) {
+		if(parseInt($("#content").css("opacity")) === 0 || parseInt($("#colophon").css("opacity")) === 0) {
 			$("#content").css("opacity", 1);
 			$("#colophon").css("opacity", 1);
 		} else {
@@ -68,19 +70,21 @@ $(function() {
 	});
 
 	//load the maps! 
-	map.loadMap();
-	map.loadMarkers();
+	if($(".map-view").size() >= 1) {
+		map.loadMap();
+		map.loadMarkers();
+	}
 });
 
 //end of doc ready
 
 function realWidth(obj){
-    var clone = obj.clone();
-    clone.css("visibility","hidden");
-    $('body').append(clone);
-    var width = clone.outerWidth();
-    clone.remove();
-    return width;
+	var clone = obj.clone();
+	clone.css("visibility","hidden");
+	$('body').append(clone);
+	var width = clone.outerWidth();
+	clone.remove();
+	return width;
 }
 
 function windowResize() {
@@ -122,28 +126,28 @@ var heightElements = ['.entry-content', '.faqs', '.left-sidebar', '.right-sideba
 // var heightElements = ['.entry-content'];	
 
 function setHeight(element){
-		var viewport = $(window).height();
-		var headers = $('.main-nav').outerHeight() + $('.secondary-nav').outerHeight();
-		var contentPadding = ($(".content-area").outerHeight() - $(".content-area").height());
-		var faqPadding = $('.faqs').outerHeight() - $('.faqs').height();
-		var heading = $('.page-heading').outerHeight();
-		var elementHeight = viewport - headers - contentPadding - heading - 50 + "px";
-		var faqHeight = viewport - headers - faqPadding - heading + 'px';
+	var viewport = $(window).height();
+	var headers = $('.main-nav').outerHeight() + $('.secondary-nav').outerHeight();
+	var contentPadding = ($(".content-area").outerHeight() - $(".content-area").height());
+	var faqPadding = $('.faqs').outerHeight() - $('.faqs').height();
+	var heading = $('.page-heading').outerHeight();
+	var elementHeight = viewport - headers - contentPadding - heading - 50 + "px";
+	var faqHeight = viewport - headers - faqPadding - heading + 'px';
 
-		$(element).each(function(index, element){
-			if (element === '.faqs' || element === '.left-sidebar' || element === '.right-sidebar'){
+	$(element).each(function(index, element){
+		if (element === '.faqs' || element === '.left-sidebar' || element === '.right-sidebar'){
 				// console.log('I am setting ' + element + ' to ' + faqHeight);
 				$(element).css('height', (
 					faqHeight)
-					);
+				);
 			} else{
 				// console.log('I am setting ' + element + ' to ' + faqHeight);
 				$(element).css('height', (
 					elementHeight)
-					);
+				);
 			}
 		});
-	}
+}
 
 //build zee map!
 
@@ -172,40 +176,38 @@ map.loadMap = function(){
 	map.etobicokeMap = new google.maps.Map(etobicoke, mapOptionsEtobicoke);
 };
 
- map.loadMarkers = function() {
+map.loadMarkers = function() {
 
- 	var templateUrl = $('body').data('templateurl');
+	var templateUrl = $('body').data('templateurl');
 
-      var brampton = new google.maps.Marker({
-        position: new google.maps.LatLng(43.6817224, -79.7172389),
-        map: map.bramptonMap, 
-        icon: templateUrl +'/img/mcclellandmapmarker.png',
-        animation: google.maps.Animation.BOUNCE
- 
-      });
+	var brampton = new google.maps.Marker({
+		position: new google.maps.LatLng(43.6817224, -79.7172389),
+		map: map.bramptonMap, 
+		icon: templateUrl +'/img/mcclellandmapmarker.png',
+		animation: google.maps.Animation.BOUNCE
 
-      var infoWindow = new google.maps.InfoWindow();
-      //listen for a click on the previous marker 
-      google.maps.event.addListener(brampton, 'click', function(){
-        infoWindow.setContent($('#brampton address')[0]);
-        infoWindow.open(map.bramptonMap, this);
-      }); 
+	});
 
-      var etobicoke = new google.maps.Marker({
-        position: new google.maps.LatLng(43.6493002, -79.5034905),
-        map: map.etobicokeMap, 
-        icon: templateUrl +'/img/mcclellandmapmarker.png',
-        animation: google.maps.Animation.BOUNCE
+	var infoWindow = new google.maps.InfoWindow();
+  //listen for a click on the previous marker 
+  google.maps.event.addListener(brampton, 'click', function(){
+  	infoWindow.setContent($('#brampton address')[0]);
+  	infoWindow.open(map.bramptonMap, this);
+  }); 
 
-      });
+  var etobicoke = new google.maps.Marker({
+  	position: new google.maps.LatLng(43.6493002, -79.5034905),
+  	map: map.etobicokeMap, 
+  	icon: templateUrl +'/img/mcclellandmapmarker.png',
+  	animation: google.maps.Animation.BOUNCE
 
-      var infoWindow = new google.maps.InfoWindow();
+  });
 
-      //listen for a click on the previous marker 
-	     google.maps.event.addListener(brampton, 'click', function(){
-	        infoWindow.setContent($('#etobicoke address')[0]);
-	        infoWindow.open(map.etobicokeMap, this);
-	      });
+  var infoWindow = new google.maps.InfoWindow();
 
-
-    };
+  //listen for a click on the previous marker 
+  google.maps.event.addListener(brampton, 'click', function(){
+  	infoWindow.setContent($('#etobicoke address')[0]);
+  	infoWindow.open(map.etobicokeMap, this);
+  });
+};

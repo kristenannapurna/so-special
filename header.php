@@ -35,7 +35,7 @@
 				<div class="mobile-navigation s-grid-2"><a href="#" id="mainMobileNavigation">&#9776;</a></div>
 				<nav id="site-navigation" class="main-navigation grid-6 m-grid-8" role="navigation">
 					<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Services Menu', 'mcclellandinsurance' ); ?></button>
-					<?php wp_nav_menu( array( 'theme_location' => 'services', 'menu_id' => 'services' ) ); ?>
+					<?php wp_nav_menu( array( 'theme_location' => 'services', 'menu_id' => 'services', 'link_before'=>'<span class="menu-item"><span class="menu-icon">&nbsp;</span><span class="menu-text">', 'link_after'=>'</span></span>' ) ); ?>
 				</nav><!-- #site-navigation -->
 				<div class="search-container grid-3 m-grid-1">
 					<form method="get" id="searchform" role="search" action="<?php bloginfo('url'); ?>/">

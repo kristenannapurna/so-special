@@ -18,7 +18,7 @@
 						<li class="commercial"><a href="http://localhost:8888/mcclellandinsurance/commercial">Commercial</a></li>
 					</ul>
 					<div class="info-menu">
-						<?php wp_nav_menu( array( 'theme_location' => 'info', 'menu_id' => 'info' ) ); ?>
+						<?php wp_nav_menu( array( 'theme_location' => 'info', 'menu_id' => 'info', 'depth'=>1 ) ); ?>
 					</div>
 				</div>
 			</nav>

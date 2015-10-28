@@ -191,6 +191,9 @@ function getMcClellandPageParentName($post) {
 function getMcClellandMenuName($post, $asLowerCase = true) {
 	if(empty($post->post_parent)) {
 		$title = str_replace(" ", "-", get_the_title( $post->ID ));
+		if($title == "About-Us") {
+			return $asLowerCase ? "info" : "About Us";
+		}
 		return $asLowerCase ? strtolower($title) : $title;
 	} else {
 		return getMcClellandMenuName(get_post($post->post_parent), $asLowerCase);
