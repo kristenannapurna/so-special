@@ -247,3 +247,4 @@ function query_post_type($query) {
 add_filter('pre_get_posts', 'query_post_type');
 
 
+show_admin_bar( false );
