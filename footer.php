@@ -28,7 +28,7 @@
 						</li>
 					</ul>
 					<div class="info-menu">
-						<?php wp_nav_menu( array( 'theme_location' => 'info', 'menu_id' => 'info', 'depth'=>1 ) ); ?>
+						<?php wp_nav_menu( array( 'theme_location' => 'info', 'menu_id' => 'info', 'depth'=>1, 'link_before'=>'<span class="menu-text">', 'link_after'=>'</span>' ) ); ?>
 					</div>
 				</div>
 			</nav>

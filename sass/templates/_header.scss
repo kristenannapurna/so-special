@@ -147,6 +147,9 @@ header{
 	.menu{
 		width: 35%;
 		float: left;
+		.personal a, .commercial a {
+			border-bottom: 2px solid transparent;
+		}
 		li{	
 			display: inline-block;
 			width: 50%;
@@ -154,26 +157,46 @@ header{
 				color: $grey;
 				display: inline-block;
 				transition: color 0.5s;
-				&:hover .menu-text{
+				&:hover{
 					border-bottom: 2px solid rgba(255,191,56,0.76);
 				}
+			}
+
+			&.menu-item a {
+				padding:0 5px;
 			}
 		}
 		.personal{
 			position: relative;
 			top: 25px;
+			.menu-icon {
+				@include menuImg('img/personal.png');
+				width: 68px;
+				top:4px;
+			}
+
+			a:hover .menu-icon {
+				@include menuImg('img/personal-hover.png');
+				width: 68px;
+				top:4px;
+			}
 		}
-		.personal .menu-text, .commercial .menu-text{
-			border-bottom: 2px solid transparent;
-		}
-		.personal .menu-icon {
-			@include menuImg('img/personal.png');
-			width: 68px;
-		}
-		.commercial .menu-icon{
-			@include menuImg('img/commercial.png');
-			height: 70px;
-			width: 73px;
+		.commercial {
+			position: relative;
+			top: 3px;
+			.menu-icon{
+				@include menuImg('img/commercial.png');
+				height: 70px;
+				width: 73px;
+				top:4px;
+			}
+
+			a:hover .menu-icon {
+				@include menuImg('img/commercial-hover.png');
+				height: 70px;
+    			width: 73px;
+				top:4px;
+			}
 		}
 	}
 	.menu-info-container{

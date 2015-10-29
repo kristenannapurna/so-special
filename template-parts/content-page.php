@@ -9,7 +9,7 @@
 
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>
+<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<nav class="clearfix page-heading">
 		<h2 class="entry-title">
 			<span class='desktop'><?=getMcClellandPageParentName($post)?></span>
@@ -23,7 +23,7 @@
 			"echo"=>0
 		]);
 
-		if(! $submenu  && wp_get_nav_menu_object(getMcClellandMenuName($post))) {\
+		if(! $submenu  && wp_get_nav_menu_object(getMcClellandMenuName($post))) {
 			$submenu = wp_nav_menu( [
 				"menu"=> getMcClellandMenuName($post),
 				"link_before"=>"<span>",
