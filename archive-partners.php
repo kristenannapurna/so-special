@@ -28,8 +28,40 @@ $employeeQuery = new WP_Query([
 
 			<div class="content-box our-team">
 				<nav class="clearfix page-heading">
-					<h2>Our Partners</h2>
-				</nav>
+					<h2 class="entry-title">
+						<span class='desktop'><?=getMcClellandPageParentName($post)?></span>
+						<span class='mobile'><?=the_title()?>
+					</h2>
+					<?php $submenu = wp_nav_menu( [
+						"menu"=> getMcClellandMenuName($post),
+			    		"submenu" => getMcClellandMenuName($post, false),
+						"link_before"=>"<span>",
+						"link_after"=>"</span>",
+						"echo"=>0
+					]);
+
+					if(! $submenu  && wp_get_nav_menu_object(getMcClellandMenuName($post))) {
+						$submenu = wp_nav_menu( [
+							"menu"=> getMcClellandMenuName($post),
+							"link_before"=>"<span>",
+							"link_after"=>"</span>",
+							"echo"=>0
+						]);
+					}
+
+					?>
+					<?if($submenu):?>
+						<div id="desktop-sub-menu">
+							<?=$submenu?>
+						</div>
+						<div class="entry-submenu-holder">
+							<a href="#" class="entry-submenu-button">&#9776;</a>
+							<div class="entry-submenu <?echo getMcClellandMenuName($post)?>">
+								<?=$submenu?>
+							</div>
+						</div>
+					<?endif?>
+				</nav><!-- .entry-header -->
 
 				<div class="wrapper clearfix">
 					<div class="entry-content employee-content grid-12 pad-2">
@@ -54,7 +86,7 @@ $employeeQuery = new WP_Query([
 						<? wp_reset_postdata()?>
 					</div>
 				</div>
-				<div id="content-cursor" data-post-parent="<?echo getMcClellandMenuName($post)?>"></div>
+				<div id="content-cursor" data-post-parent="about-us"></div>
 			</div> <!-- /.content-box -->
 		<?php else : ?>
 

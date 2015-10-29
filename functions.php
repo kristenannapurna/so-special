@@ -180,11 +180,12 @@ function getMcClellandPageName($post, $isMainPage) {
 	}
 }
 
-function getMcClellandPageParentName($post) {
+function getMcClellandPageParentName($post, $asLowerCase = false) {
 	if(empty($post->post_parent)) {
-		return get_the_title($post->ID);
+		$title = get_the_title($post->ID);
+		return $asLowerCase ? str_replace(" ", "-", strtolower($title)) : $title;
 	} else {
-		return getMcClellandPageParentName(get_post($post->post_parent));
+		return getMcClellandPageParentName(get_post($post->post_parent), $asLowerCase);
 	}
 }
 

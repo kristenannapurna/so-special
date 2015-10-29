@@ -19,15 +19,6 @@ $(function() {
 	});
 
 
-	$('.main-gallery').flickity({
-		cellAlign: 'left',
-		contain: true,
-		imagesLoaded: true,
-		pageDots: false,
-		prevNextButtons: false,
-		autoPlay: true,
-		wrapAround: true
-	});
 
 	$(".entry-submenu-button").click(function(e) {
 		e.preventDefault();
@@ -88,10 +79,14 @@ function realWidth(obj){
 }
 
 function windowResize() {
-	setCursor();
+	if($("#content-cursor").size() > 0) {
+		setCursor();
+	}
 	setSubMenu();
 	setContentPaddingTop();
-	setHeight(heightElements);
+	if($(".home").size() > 0) {
+		setHeight(heightElements);
+	}
 }
 
 function setContentPaddingTop() {

@@ -154,7 +154,7 @@ header{
 				color: $grey;
 				display: inline-block;
 				transition: color 0.5s;
-				&:hover{
+				&:hover .menu-text{
 					border-bottom: 2px solid rgba(255,191,56,0.76);
 				}
 			}
@@ -163,14 +163,14 @@ header{
 			position: relative;
 			top: 25px;
 		}
-		.personal a, .commercial a{
+		.personal .menu-text, .commercial .menu-text{
 			border-bottom: 2px solid transparent;
 		}
-		.personal:before{
+		.personal .menu-icon {
 			@include menuImg('img/personal.png');
 			width: 68px;
 		}
-		.commercial:before{
+		.commercial .menu-icon{
 			@include menuImg('img/commercial.png');
 			height: 70px;
 			width: 73px;

@@ -1,12 +1,6 @@
 .main-gallery{
 	// max-width: 100%;
-	.gallery-cell{
-		width: 100%;
-		img{
-			width: 100%;
-			display: block;
-		}
-	}
+	
 
 	@include bp(small) {
 		display:none;

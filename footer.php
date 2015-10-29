@@ -14,8 +14,18 @@
 			<nav id="secondary-nav" class="secondary-navigation" role="navigation">
 				<div class="wrapper clearfix">
 					<ul class="menu clearfix">
-						<li class="personal"><a href="http://localhost:8888/mcclellandinsurance/personal">Personal</a></li>
-						<li class="commercial"><a href="http://localhost:8888/mcclellandinsurance/commercial">Commercial</a></li>
+						<li class="personal">
+							<a class='menu-item' href="http://localhost:8888/mcclellandinsurance/personal">
+								<span class='menu-icon'></span>
+								<span class='menu-text'>Personal</span>
+							</a>
+						</li>
+						<li class="commercial">
+							<a href="http://localhost:8888/mcclellandinsurance/commercial">
+								<span class='menu-icon'></span>
+								<span class='menu-text'>Commercial</span>
+							</a>
+						</li>
 					</ul>
 					<div class="info-menu">
 						<?php wp_nav_menu( array( 'theme_location' => 'info', 'menu_id' => 'info', 'depth'=>1 ) ); ?>
@@ -79,7 +89,5 @@
 </div><!-- #page -->
 
 <?php wp_footer(); ?>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/flickity/1.1.1/flickity.pkgd.min.js"></script>
-
 </body>
 </html>
