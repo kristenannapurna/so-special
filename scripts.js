@@ -83,7 +83,7 @@ function windowResize() {
 		setCursor();
 	}
 	setSubMenu();
-	// setContentPaddingTop();
+	setContentPaddingTop();
 	if($(".home").size() > 0) {
 		setHeight(heightElements);
 	}
