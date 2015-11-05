@@ -38,7 +38,7 @@
 				<?=$submenu?>
 			</div>
 			<div class="entry-submenu-holder">
-				<a href="#" class="entry-submenu-button">&#9776;</a>
+				<a href="#" class="entry-submenu-button">More<!-- &#9776; --></a>
 				<div class="entry-submenu <?echo getMcClellandMenuName($post)?>">
 					<?=$submenu?>
 				</div>

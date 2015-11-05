@@ -15,13 +15,13 @@
 				<div class="wrapper clearfix">
 					<ul class="menu clearfix">
 						<li class="personal">
-							<a class='menu-item' href="http://localhost:8888/mcclellandinsurance/personal">
+							<a class='menu-item' href="<?php echo get_page_link('25') ?>">
 								<span class='menu-icon'></span>
 								<span class='menu-text'>Personal</span>
 							</a>
 						</li>
 						<li class="commercial">
-							<a href="http://localhost:8888/mcclellandinsurance/commercial">
+							<a href="<?php echo get_page_link('75') ?>">
 								<span class='menu-icon'></span>
 								<span class='menu-text'>Commercial</span>
 							</a>
@@ -70,9 +70,9 @@
 				<p class="grid-6 offset-6 s-offset-0 s-grid-12">Join our Newsletter</p>
 				<hr class="grid-2 offset-10 s-offset-0 s-grid-2"/>
 				<p class="grid-6 offset-6 s-offset-0 s-grid-12">Brampton Office</p>
-				<p class="grid-6 offset-6 s-offset-0 s-grid-12"><a href="tel:+19054510755">(905) 451-0755</a></p>
+				<p class="grid-6 offset-6 s-offset-0 s-grid-12"><a href="tel:+19054510755">905-451-0755</a></p>
 				<p class="grid-6 offset-6 s-offset-0 s-grid-12">Etobicoke Office</p>
-				<p class="grid-6 offset-6 s-offset-0 s-grid-12"><a href="tel:+14162370436">(416) 237-0436</a></p>
+				<p class="grid-6 offset-6 s-offset-0 s-grid-12"><a href="tel:+14162370436">416-237-0436</a></p>
 				<hr class="grid-2 offset-10 s-offset-0 s-grid-2"/>
 				<div class="icon-social-container s-grid-12">
 					<a href="http://twitter.com/mcclellandins" target="_blank"><div class="icon-social icon-social-twitter"></div></a>

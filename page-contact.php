@@ -50,7 +50,7 @@ get_header(); ?>
 								</div>
 								<div class="email">
 									<p>Email</p>
-									<a href="mailto:brampton@mcclellandinsurance.biz">brampton@mcclellandinsurance.biz</a>
+									<a href="mailto:brampton@mcclellandinsurance.biz">brampton@mcclellandinsurance.com</a>
 								</div>
 								
 							</div>
@@ -73,7 +73,7 @@ get_header(); ?>
 								</div>
 								<div class="email">
 									<p>Email</p>
-									<a href="mailto:etobicoke@mcclellandinsurance.biz">etobicoke@mcclellandinsurance.biz</a>
+									<a href="mailto:etobicoke@mcclellandinsurance.biz">etobicoke@mcclellandinsurance.com</a>
 								</div>
 							</div>
 							<div class="branch-map" id="etobicokeMap">

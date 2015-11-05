@@ -29,10 +29,10 @@
 	<header id="masthead" class="site-header" role="banner">
 		<div class="main-nav grid-12">
 			<div class="wrapper clearfix">
-				<div class="site-branding grid-3 pad-2-right s-grid-10 s-pad-1">
+				<div class="site-branding grid-3 pad-2-right s-grid-10 s-pad-1 p-grid-5 p-offset-3">
 					<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><img src=" <?php bloginfo('template_directory') ?>/img/mcclellandlogo.png " alt="McClelland Insurance Logo"></a></h1>
 				</div><!-- .site-branding -->
-				<div class="mobile-navigation s-grid-2"><a href="#" id="mainMobileNavigation">&#9776;</a></div>
+				<div class="mobile-navigation s-grid-2 p-grid-2 p-offset-2"><a href="#" id="mainMobileNavigation">&#9776;</a></div>
 				<nav id="site-navigation" class="main-navigation grid-6 m-grid-8" role="navigation">
 					<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Services Menu', 'mcclellandinsurance' ); ?></button>
 					<?php wp_nav_menu( array( 'theme_location' => 'services', 'menu_id' => 'services', 'link_before'=>'<span class="menu-item"><span class="menu-icon">&nbsp;</span><span class="menu-text">', 'link_after'=>'</span></span>' ) ); ?>
@@ -50,12 +50,26 @@
 	</header><!-- #masthead -->
 
 	<div id="mobileMenu" class="mobile-nav">
-		<?php wp_nav_menu( array( 'theme_location' => 'services', 'menu_id' => 'services' ) ); ?>
+		<?php wp_nav_menu( array( 'theme_location' => 'services', 'menu_id' => 'services',  'link_before'=>'<span class="menu-item"><span class="menu-icon">&nbsp;</span><span class="menu-text">', 'link_after'=>'</span></span>' ) ); ?>
 		<hr/>
 		<div class="wrapper clearfix">
 			<ul class="menu clearfix">
-				<li class="personal"><a href="http://mcclellandinsurance.com/personal">Personal</a></li>
-				<li class="commercial"><a href="http://mcclellandinsurance.com/commercial">Commercial</a></li>
+				<li class="personal">
+					<a href=" <?php echo get_page_link('25') ?>">
+						<span class="menu-item">
+							<span class="menu-icon">&nbsp;</span>
+							<span class="menu-text">Personal</span>
+						</span>
+					</a>
+				</li>
+				<li class="commercial">
+					<a href=" <?php echo get_page_link('75') ?>">
+						<span class="menu-item clearfix">
+							<span class="menu-icon">&nbsp;</span>
+							<span class="menu-text">Commercial</span>
+						</span>
+					</a>
+				</li>
 			</ul>
 			<hr/>
 			<div class="search-container">
