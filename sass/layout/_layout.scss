@@ -5,8 +5,8 @@
 @import 'grid-generator';
 @include gridGenerator(
     12,
-    (0, 730px, 960px),
-    (s-,m-,l-),
+    (0,600px, 730px, 960px),
+    (s-,p-,m-,l-),
     'px',
     $spaceUnits: (.5em,1em,2em)
 );

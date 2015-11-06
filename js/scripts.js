@@ -29,11 +29,11 @@ $(function() {
 		e.preventDefault();
 		$("#mobileMenu").toggle();
 		if(parseInt($("#content").css("opacity")) === 0 || parseInt($("#colophon").css("opacity")) === 0) {
-			$("#content").css("opacity", 1);
-			$("#colophon").css("opacity", 1);
+			$("#content").css({"opacity": 1, "display":"block"});
+			$("#colophon").css({"opacity": 1, "display":"block"});
 		} else {
-			$("#content").css("opacity", 0);
-			$("#colophon").css("opacity", 0);
+			$("#content").css({"opacity": 0, "display":"none"});
+			$("#colophon").css({"opacity": 0, "display":"none"});
 		}
 	});
 
@@ -55,9 +55,11 @@ $(function() {
 
 	windowResize();
 	setHeight(heightElements);
+	setSlideshow();
 	
 	$(window).resize(function() {
 		windowResize();
+		setSlideshow();
 	});
 
 	//load the maps! 
@@ -78,19 +80,32 @@ function realWidth(obj){
 	return width;
 }
 
+var wait = true;
 function windowResize() {
+
 	if($("#content-cursor").size() > 0) {
 		setCursor();
 	}
 	setSubMenu();
-	// setContentPaddingTop();
 	if($(".home").size() > 0) {
 		setHeight(heightElements);
+	} else {
+		wait = false;
+	}
+
+	if(wait) {
+		setTimeout(function() {
+			setContentPaddingTop();
+		}, 100);
+		wait = false;
+	} else {
+		setContentPaddingTop();
 	}
 }
 
 function setContentPaddingTop() {
-	$("#content").css("padding-top", $("header").height());
+	$("#content").css("padding-top", $("header").height() - 1);
+	$("#mobileMenu").css("top", $("header").height() - 1);
 }
 
 function setSubMenu() {
@@ -121,6 +136,14 @@ var heightElements = ['.entry-content', '.faqs', '.left-sidebar', '.right-sideba
 // var heightElements = ['.entry-content'];	
 
 function setHeight(element){
+
+	if($(".main-nav .mobile-navigation").css("display") == "block") {
+		$(element).each(function(index, element){
+			$(element).css("height", "");
+		});
+		return;
+	}
+
 	var viewport = $(window).height();
 	var headers = $('.main-nav').outerHeight() + $('.secondary-nav').outerHeight();
 	var contentPadding = ($(".content-area").outerHeight() - $(".content-area").height());
@@ -142,6 +165,17 @@ function setHeight(element){
 				);
 			}
 		});
+}
+
+
+function setSlideshow(){
+	var headersHeight = $('.main-nav').outerHeight() + $('.secondary-nav').outerHeight();
+	var viewport = $(window).height();
+	var sliderHeight = viewport - headersHeight + 'px';
+	setTimeout(function () {
+		$('.cycloneslider-template-default .cycloneslider-slides').animate(
+			{height:sliderHeight}, 100);
+	}, 100);
 }
 
 //build zee map!
@@ -198,11 +232,15 @@ map.loadMarkers = function() {
 
   });
 
-  var infoWindow = new google.maps.InfoWindow();
+  // var infoWindow = new google.maps.InfoWindow();
 
   //listen for a click on the previous marker 
   google.maps.event.addListener(brampton, 'click', function(){
   	infoWindow.setContent($('#etobicoke address')[0]);
   	infoWindow.open(map.etobicokeMap, this);
   });
+
+
+
+
 };

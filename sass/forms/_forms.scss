@@ -1,3 +1,7 @@
 @import "buttons";
 
 @import "fields";
+
+.gform_wrapper{
+	overflow: auto !important;
+}

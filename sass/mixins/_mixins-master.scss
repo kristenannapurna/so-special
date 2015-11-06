@@ -30,7 +30,7 @@
 }
 
 //for appending image to menu items
-@mixin menuImg($bgURL) {
+@mixin menuImg($bgURL, $top:12px) {
 	content: '';
 	background: url($bgURL) no-repeat;
 	background-size: contain;
@@ -39,7 +39,7 @@
 	display: inline-block;
 	margin-right: 5px;
 	position: relative;
-	top: 12px;
+	top: $top;
 }
 
 .clearfix:after {

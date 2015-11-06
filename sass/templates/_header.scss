@@ -41,6 +41,9 @@ header{
 		@include bp(max, 730px) {
 			display:block;
 		}
+		@include bp(601px, 730px) {
+			margin-top:8px;
+		}
 	}
 	.main-navigation{
 		.claims .menu-icon{
@@ -226,30 +229,38 @@ header{
     padding: 20px;
     z-index:999;
 
-    .claims::before{
-		@include menuImg('img/mobile-speechbubble.png');
-		
+    .claims .menu-icon{
+		@include menuImg('img/mobile-speechbubble.png', 5px);
 	}
-	.service-request::before{
-		@include menuImg('img/mobile-envelope.png');
+	.service-request .menu-icon{
+		@include menuImg('img/mobile-envelope.png', 5px);
 	}
-	.contact-us::before{
-		@include menuImg('img/mobile-marker.png');	
+	.contact-us .menu-icon{
+		@include menuImg('img/mobile-marker.png', 5px);	
 	}
-	.request-quote::before{
-		@include menuImg('img/mobile-calculator.png');
+	.request-quote .menu-icon{
+		@include menuImg('img/mobile-calculator.png', 5px);
 	}
-	.sign-in::before{
-		@include menuImg('img/mobile-login.png');
+	.sign-in .menu-icon{
+		@include menuImg('img/mobile-login.png', 5px);
 	}
-	.personal:before{
-		@include menuImg('img/mobile-personal.png');
+	.personal .menu-icon{
+		@include menuImg('img/mobile-personal.png', 0px);
 		width: 68px;
 	}
-	.commercial:before{
-		@include menuImg('img/mobile-commercial.png');
-		height: 70px;
-		width: 73px;
+	.commercial {
+		.menu-icon{
+			@include menuImg('img/mobile-commercial.png', 0px);
+			height: 70px;
+			width: 73px;
+			float:left;
+		}
+
+		.menu-text {
+			line-height:70px;
+			float:left;
+			display: block;
+		}
 	}
 
 	ul {
@@ -260,7 +271,7 @@ header{
 		li a {
 			@include font-size(25);
 			position:relative;
-			top:-10px;
+			display: block;
 		}
 	}
 
