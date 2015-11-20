@@ -16,8 +16,12 @@ get_header(); ?>
 
 			<nav class=" clearfix page-heading">
 				<h2 class="page-title"><?php printf( esc_html__( 'Search Results for:%s', 'mcclellandinsurance' ), '<span>' . get_search_query() . '</span>' ); ?></h2>
+				<div class="next-search-links">
+					<span class="nav-previous"><?php previous_posts_link('<i class="fa fa-arrow-left"></i> Previous') ?></span>
+					<span class="nav-next"><?php next_posts_link('Next <i class="fa fa-arrow-right"></i>') ?></span>
+				</div>
 			</nav><!-- .page-header -->
-
+			
 			<?php /* Start the Loop */ ?>
 			<?php while ( have_posts() ) : the_post(); ?>
 
@@ -33,8 +37,8 @@ get_header(); ?>
 			<?php endwhile; ?>
 
 			<div class="next-posts-links">
-			<span class="nav-previous"><?php next_posts_link('<i class="fa fa-arrow-left"></i> Next Page') ?></span>
-				<span class="nav-next"><?php previous_posts_link('Previous Page <i class="fa fa-arrow-right"></i>') ?></span>
+				<span class="nav-previous"><?php previous_posts_link('<i class="fa fa-arrow-left"></i> Previous') ?></span>
+				<span class="nav-next"><?php next_posts_link('Next <i class="fa fa-arrow-right"></i>') ?></span>
 			</div>
 
 		<?php else : ?>

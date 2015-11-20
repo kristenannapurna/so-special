@@ -121,12 +121,18 @@ header{
 			position: absolute;
 			top: 28px;
 			left: 12px;
+			@include bp(max, 960px){
+				display: none;
+			}
 		}
 		input{
 			width: 100%;
 			border: none;
 			padding: 4px 4px 4px 40px;
 			box-shadow: inset 0px 1px 10px #303030;
+			@include bp(max, 960px){
+				padding: 4px 4px 4px 10px;
+			}
 			@include bp(medium) {
 				font-size:13px;
 			}
@@ -215,7 +221,7 @@ header{
 		}
 	}
 
-	@include bp(small) {
+	@include bp(max, 730px) {
 		display:none;
 	}
 }

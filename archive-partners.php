@@ -68,7 +68,7 @@ $employeeQuery = new WP_Query([
 						<div class="grid-12">
 							<?php $num = 0; while( $employeeQuery->have_posts() ): $employeeQuery->the_post();$num++ ?>
 								<div class="grid-4 s-grid-12 pad-2 employeeBox">
-									<a href=" <?php the_field('web_link') ?>">
+									<a href=" <?php the_field('web_link') ?>" target="_blank">
 										<div class="employeeImageHolder">
 											<?php echo the_post_thumbnail();?>
 										</div>

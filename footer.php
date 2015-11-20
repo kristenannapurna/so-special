@@ -65,9 +65,11 @@
 				]); ?>
 			</div>
 			<div class="grid-3 s-grid-12 footerInfo">
-				<div class="icon-contact"></div>
-				<div class="grid-12"></div>
-				<p class="grid-6 offset-6 s-offset-0 s-grid-12">Join our Newsletter</p>
+				<a href="http://visitor.r20.constantcontact.com/d.jsp?llr=oyci44dab&p=oi&m=1103805811470&sit=gyw8ufpfb&f=2865fac4-57da-40be-b8ba-40a7aaf2ac0a">
+					<div class="icon-contact"></div>
+					<div class="grid-12"></div>
+					<p class="grid-6 offset-6 s-offset-0 s-grid-12">Join our Newsletter</p>
+				</a>
 				<hr class="grid-2 offset-10 s-offset-0 s-grid-2"/>
 				<p class="grid-6 offset-6 s-offset-0 s-grid-12">Brampton Office</p>
 				<p class="grid-6 offset-6 s-offset-0 s-grid-12"><a href="tel:+19054510755">905-451-0755</a></p>

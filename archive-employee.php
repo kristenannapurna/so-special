@@ -47,7 +47,7 @@ $employeeQuery = new WP_Query([
 									</a>
 									<?$linkedIn = get_post_meta($post->ID, 'linkedin', true);?>
 									<?if($linkedIn != ''):?>
-										<a href="<?=$linkedIn?>">
+										<a target="_new" href="<?=$linkedIn?>">
 											<img src="<?php bloginfo('template_directory') ?>/img/linkedin.png"/>
 										</a>
 									<?endif?>

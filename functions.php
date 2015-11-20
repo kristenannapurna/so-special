@@ -248,4 +248,13 @@ function query_post_type($query) {
 add_filter('pre_get_posts', 'query_post_type');
 
 
-show_admin_bar( false );
+
+// filter search
+
+function filter_search($query) {
+    if ($query->is_search) {
+		$query->set('post_type', array('post', 'faq', 'employee', 'partner', 'page'));
+    };
+    return $query;
+};
+add_filter('pre_get_posts', 'filter_search');

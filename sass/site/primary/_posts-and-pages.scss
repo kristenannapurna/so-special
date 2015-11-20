@@ -20,6 +20,10 @@
 .entry-content,
 .entry-summary {
 	margin: 1.5em 0 0;
+
+	&.grid-12 {
+		margin:1.5em 0 0;
+	}
 }
 
 .page-links {

@@ -267,12 +267,20 @@ input{
 }
 
 
-.next-posts-links{
+.next-posts-links {
 	float: right;
 	padding-bottom: 20px;		
 	.nav-previous, .nav-next{
-	margin-right: 20px;
+		margin-right: 20px;
 	} 
+}
+
+.next-search-links {
+	float:right;
+	padding-top:11px;
+	.nav-previous, .nav-next {
+		margin-right:20px;
+	}
 }
 
 section.not-found{
